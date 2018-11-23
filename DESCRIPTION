@@ -1,0 +1,15 @@
+Package: BlandAltman
+Title: Bland-Altman analysis and plot
+Version: 0.1
+Authors@R: person("Michael", "Sauthier", email = "michael.sauthier@gmail.com", role = c("aut", "cre"))
+Description: 
+    - Bias (mean of the differences) and 95% confidence interval
+    - Limits of agreement with their 95% confidence interval
+    - Percentage of error
+Depends: R (>= 3.3.0)
+License: GNU-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Imports:
+
