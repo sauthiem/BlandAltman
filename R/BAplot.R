@@ -71,7 +71,7 @@ BA.plot <- function(x, y, ...){
   if(percent == T){
     plot(jitter(dataY, jitterLevel) ~ jitter(dataX, jitterLevel), 
          pch=19,  cex=0.6,
-         col=rgb(red = 0.275, green = 0.51, blue = 0.706, alpha = 0.6),# 'steelblue',
+         col=rgb(red = 0.275, green = 0.51, blue = 0.706, alpha = 0.9),# 'steelblue',
          #  xlim = c(0,30),
          #   ylim = c(-3,3),
          yaxt = 'n',
