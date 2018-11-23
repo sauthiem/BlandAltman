@@ -51,7 +51,7 @@ BA.plot <- function(x, y, ...){
   
   # Statistiques
   meanDiff <- mean(dataY)
-  agrt <- qnorm(1-((1-int.conf)/2))*sd(dataY)
+  agrt <- qnorm(1-((1-0.95)/2))*sd(dataY)
   
   #Calculate confidence interval
   se_mean <- sqrt((sd(dataY)^2)/length(dataY))
