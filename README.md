@@ -33,3 +33,7 @@ Calculated elements:
 - percentage.error
 - n
 - conf.int
+
+References: 
+1) Bland, J.M. & Altman, D.G., 1986. Statistical methods for assessing agreement between two methods of clinical measurement. Lancet, 1(8476), pp.307–310.
+2) Giavarina, D., 2015. Understanding Bland Altman analysis. Biochemia Medica, 25(2), pp.141–151
