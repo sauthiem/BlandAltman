@@ -5,6 +5,7 @@
 ```R
 # Only one time:
 install.packages("devtools")
+library(devtools)
 install_github("sauthiem/BlandAltman")
 
 # Every time
