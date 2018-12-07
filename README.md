@@ -27,9 +27,7 @@ BA.plot(x,y, title='My great title', conf.int=0.95)
 ba <- BA.analysis(x,y)
 ```
 
-
 ![BA Example](BA.svg)
-<img src="BA.svg">
 
 
 ## Calculated elements:
