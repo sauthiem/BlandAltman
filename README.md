@@ -17,15 +17,16 @@ library(BlandAltman)
 
 ```R
 # Any numerical vector. x and y have to be the same length.
-x <- rnorm(100)
-y <- rnorm(100)
+a <- rpois(100, 10)
+b <- rpois(100, 10)
 
 # Plot
-BA.plot(x,y, title='My great title', percent=T, reference="mean", conf.int=0.95)
+BA.plot(a, b, title="Simulated vs observed data", percent=T, reference="mean", conf.int=0.95)
 
 # Numbers
-ba <- BA.analysis(x,y)
+ba <- BA.analysis(a, b, percent=F)
 str(ba)
+
 ```
 
 ## Example 2:
