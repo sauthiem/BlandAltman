@@ -4,30 +4,35 @@
 \alias{BA.analysis}
 \title{Bland-Altman analysis}
 \usage{
-BA.analysis(x, y, ...)
+BA.analysis(a, b, ...)
 }
 \arguments{
-\item{x}{A numerical vector}
+\item{a}{A numerical vector method A}
 
-\item{y}{A numerical vector}
+\item{b}{A numerical vector method B}
 
-\item{perrcent}{bool for relative estimation.}
+\item{percent}{bool for relative estimation (default F)}
+
+\item{conf.int}{Confidence interval (default 0.95)}
 }
 \value{
-All the element required to a BA analysis
+List if the element required to a BA analysis
 }
 \description{
-This function returns the Bland-Altman elements with 95% confidence
-interval on the bias and on the limits of agreements. It also 
-calculates the percentage of error. Data can be converted to 
-relative estimation.
+This function returns the Bland-Altman (BA) elements with 95% confidence
+interval (by default) on the bias and on the limits of agreements. It also
+calculates the percentage of error. Data can be converted to
+relative estimation. Validation of differences normality with
+Shapiro-Wilk test.
 }
 \details{
-References: 
+References:
+
 1) Bland, J.M. & Altman, D.G., 1986. Statistical methods for assessing agreement
 between two methods of clinical measurement. Lancet, 1(8476), pp.307–310.
+
 2) Giavarina, D., 2015. Understanding Bland Altman analysis. Biochemia Medica, 25(2), pp.141–151
 }
 \examples{
-BA.analysis(c(1,2,3,4), c(2,3,4,5))
+ba <- BA.analysis(c(1,2,3,4), c(2,3,4,5))
 }

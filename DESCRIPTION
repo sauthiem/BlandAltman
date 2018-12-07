@@ -1,11 +1,16 @@
 Package: BlandAltman
 Title: Bland-Altman analysis and plot
-Version: 0.1
-Authors@R: person("Michael", "Sauthier", email = "michael.sauthier@gmail.com", role = c("aut", "cre"))
+Version: 0.2
+Authors@R: c(
+    person("Michael", "Sauthier", email = "michael.sauthier@gmail.com", role = c("aut", "cre")),
+    person("David", "Brossier", email = "david_brossier@yahoo.fr", role = c("ctb")) )
 Description: 
     - Bias (mean of the differences) and 95% confidence interval
-    - Limits of agreement with their 95% confidence interval
+    - Limits of agreement (± 1.96 by default) with their 95% confidence interval
+    - Relative or absolute difference
+    - Validation of the normality of the differences (Shapiro-Wilk)
     - Percentage of error
+    - No dependencies
 Depends: R (>= 3.3.0)
 License: GNU-3
 Encoding: UTF-8

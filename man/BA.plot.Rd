@@ -4,24 +4,31 @@
 \alias{BA.plot}
 \title{Bland-Altman plot}
 \usage{
-BA.plot(x, y, ...)
+BA.plot(a, b, ...)
 }
 \arguments{
-\item{x}{and y: numerical vector, title of the plot and percent (bool) for relative
-estimation.}
+\item{x}{A numerical vector}
+
+\item{y}{A numerical vector}
+
+\item{title}{The title of the plot}
+
+\item{percent}{bool for relative estimation (default F)}
+
+\item{conf.int}{Confidence interval (default 0.95)}
+
+\item{reference}{c("A", "B", "mean") method to be used on X axis (default "mean")}
 }
 \value{
-standard R plot
+Standard R plot
 }
 \description{
-This function creates a Bland-Altman plot with 95% confidence
-interval on the bias and on the limits of agreements. It also 
-calculates the percentage of error. Data can be converted to 
-relative estimation.
+This function returns a Bland-Altman (BA) plot with 95% confidence
+interval (by default) on the bias and on the limits of agreements. It also
+calculates the percentage of error. Data can be converted to
+relative estimation. Validation of differences normality with
+Shapiro-Wilk test.
 }
-\details{
-References: 
-1) Bland, J.M. & Altman, D.G., 1986. Statistical methods for assessing agreement
-between two methods of clinical measurement. Lancet, 1(8476), pp.307–310.
-2) Giavarina, D., 2015. Understanding Bland Altman analysis. Biochemia Medica, 25(2), pp.141–151
+\examples{
+BA.analysis(c(1,2,3,4), c(2,3,4,5), title="My great title")
 }

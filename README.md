@@ -3,7 +3,7 @@
 ## To install GitHub R packages:
 
 ```R
-# Only one time:
+# Only the first time or to upgrade:
 install.packages("devtools")
 library(devtools)
 install_github("sauthiem/BlandAltman")
@@ -27,7 +27,15 @@ BA.plot(x,y, title='My great title', conf.int=0.95)
 ba <- BA.analysis(x,y)
 ```
 
+
+![BA Example](BlandAltman/BA.svg)
+<img src="BlandAltman/BA.svg">
+
+
 ## Calculated elements:
+
+- x
+- y
 
 - bias
 - bias.ci
