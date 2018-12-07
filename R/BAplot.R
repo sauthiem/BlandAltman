@@ -27,7 +27,7 @@ BA.plot <- function(a, b, ...){
   if (any(names(k) == 'title')){
     title <- k$title
   } else {
-    title <- ''
+    title <-' '
   }
 
   if (any(names(k) == 'percent')){

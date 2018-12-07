@@ -8,7 +8,7 @@ install.packages("devtools")
 library(devtools)
 install_github("sauthiem/BlandAltman")
 
-# Every time
+# Every time before use
 library(BlandAltman)
 ```
 
@@ -21,34 +21,40 @@ x <- rnorm(100)
 y <- rnorm(100)
 
 # Plot
-BA.plot(x,y, title='My great title', conf.int=0.95)
+BA.plot(x,y, title='My great title', percent=T, reference="mean", conf.int=0.95)
 
 # Numbers
 ba <- BA.analysis(x,y)
+str(ba)
 ```
+
+## Example 2:
 
 ![BA Example](BA.svg)
 
 
-## Calculated elements:
+## Parameters
+
+- title: Title of the plot
+- percent: relative estimation of the differences (default F)
+- reference: X axis (method A, B or mean) (default "mean")
+- conf.int: confidence interval of both limits of agreements and all uncertainties (default 0.95 (~ ±1.96)
+
+## List returned elements:
 
 - x
 - y
-
 - bias
 - bias.ci
 - bias.ci.lower
 - bias.ci.upper
 - limit.agrmt.ci
-
 - limit.agrmt.upper
 - limit.agrmt.upper.ci.upper
 - limit.agrmt.upper.ci.lower
-
 - limit.agrmt.lower
 - limit.agrmt.lower.ci.upper
 - limit.agrmt.lower.ci.lower
-
 - percentage.error
 - n
 - conf.int
