@@ -28,8 +28,8 @@ ba <- BA.analysis(x,y)
 ```
 
 
-![BA Example](BlandAltman/BA.svg)
-<img src="BlandAltman/BA.svg">
+![BA Example](BA.svg)
+<img src="BA.svg">
 
 
 ## Calculated elements:
