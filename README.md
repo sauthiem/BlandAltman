@@ -29,10 +29,27 @@ str(ba)
 
 ```
 
-## Example 2:
-
 ![BA Example](BA.svg)
 
+```
+List of 16
+ $ x                         : num [1:100] 10.5 10 9 10 9.5 12.5 8.5 8.5 14 12.5 ...
+ $ y                         : num [1:100] -3 -6 2 8 5 -9 -5 -3 2 -3 ...
+ $ bias                      : num -0.54
+ $ bias.ci                   : num 0.867
+ $ bias.ci.lower             : num -1.41
+ $ bias.ci.upper             : num 0.327
+ $ limit.agrmt.ci            : num 1.5
+ $ limit.agrmt.upper         : num 8.03
+ $ limit.agrmt.upper.ci.upper: num 9.53
+ $ limit.agrmt.upper.ci.lower: num 6.52
+ $ limit.agrmt.lower         : num -9.11
+ $ limit.agrmt.lower.ci.upper: num -7.6
+ $ limit.agrmt.lower.ci.lower: num -10.6
+ $ percentage.error          : num 8.1
+ $ n                         : int 100
+ $ conf.int                  : num 0.95
+```
 
 ## Parameters
 
