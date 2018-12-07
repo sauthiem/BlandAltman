@@ -7,7 +7,7 @@ Bland-Altman analysis and plot
  - Bias (mean of the differences) and 95% confidence interval
  - Limits of agreement (± 1.96 by default) with their 95% confidence interval
  - Relative or absolute difference
- - Validation of the normality of the differences (Shapiro-Wilk)
+ - Validation of differences normality distribution (Shapiro-Wilk)
  - Percentage of error
  - No dependencies
 
