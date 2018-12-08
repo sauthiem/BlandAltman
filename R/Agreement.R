@@ -2,9 +2,9 @@
 #'
 #' This function returns the overall and specific agreeement (Cicchetti 1990)
 #'
-#' @param x A numerical vector or a matrix
+#' @param x A numerical vector or a matrix of 2 raters
 #' @param y A numerical vector
-#' @return overall agreement, specific agreements per classes (+ or - or more) and the confusion matrix
+#' @return overall agreement, specific agreements for each class and the confusion matrix
 #' @examples
 #' agreement(c(1,2,2,3,2), c(1,2,4,3,2))
 #' @export
@@ -38,11 +38,15 @@ agreement <- function(a, b = NULL){
   names(specific.agree) <- liste_classes
   names(totals) <- liste_classes
 
+  conf.matrix.normalized <- cm/max(cm)
+
   return(list("conf.matrix"=cm,
+              "conf.matrix.normalized"=conf.matrix.normalized,
               "overall"=overall.agree,
               "specific"=specific.agree,
               "totals"=totals
   ))
 }
+
 
 

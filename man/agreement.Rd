@@ -7,12 +7,12 @@
 agreement(a, b = NULL)
 }
 \arguments{
-\item{x}{A numerical vector or a matrix}
+\item{x}{A numerical vector or a matrix of 2 raters}
 
 \item{y}{A numerical vector}
 }
 \value{
-overall agreement, specific agreements per classes (+ or - or more) and the confusion matrix
+overall agreement, specific agreements for each class and the confusion matrix
 }
 \description{
 This function returns the overall and specific agreeement (Cicchetti 1990)
