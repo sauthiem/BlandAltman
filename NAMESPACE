@@ -2,3 +2,4 @@
 
 export(BA.analysis)
 export(BA.plot)
+export(agreement)
