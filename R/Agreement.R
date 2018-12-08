@@ -25,10 +25,11 @@ agreement <- function(a, b = NULL){
 
   liste_classes <- levels(factor(mat))
   cm <- table(factor(mat[,1], levels = liste_classes), factor(mat[,2], levels = liste_classes))
-  overall.agree <- (cm[1,1] + cm[2,2])/sum(cm)
+  overall.agree <- sum(diag(cm))/sum(cm)
 
   specific.agree <- NULL
   for (ij in 1:length(liste_classes)) {
+
     a <- (2*cm[ij,ij])/(sum(cm[ij,])+sum(cm[,ij]))
     specific.agree <- c(specific.agree, a)
   }
