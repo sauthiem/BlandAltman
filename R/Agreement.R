@@ -28,16 +28,20 @@ agreement <- function(a, b = NULL){
   overall.agree <- sum(diag(cm))/sum(cm)
 
   specific.agree <- NULL
+  totals <- NULL
   for (ij in 1:length(liste_classes)) {
-
     a <- (2*cm[ij,ij])/(sum(cm[ij,])+sum(cm[,ij]))
     specific.agree <- c(specific.agree, a)
+
+    totals <- c(totals, sum(cm[ij,])+sum(cm[,ij]))
   }
   names(specific.agree) <- liste_classes
+  names(totals) <- liste_classes
 
   return(list("conf.matrix"=cm,
               "overall"=overall.agree,
-              "specific"=specific.agree
+              "specific"=specific.agree,
+              "totals"=totals
   ))
 }
 
