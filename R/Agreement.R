@@ -35,8 +35,8 @@ agreement <- function(a, b = NULL){
   names(specific.agree) <- liste_classes
 
   return(list("conf.matrix"=cm,
-              "overall.agree"=overall.agree,
-              "specific.agree"=specific.agree
+              "overall"=overall.agree,
+              "specific"=specific.agree
   ))
 }
 
