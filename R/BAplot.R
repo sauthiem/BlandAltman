@@ -147,7 +147,7 @@ BA.plot <- function(a, b, ...){
   mtext(paste('N = ', length(x),
               ', Bias ', round(ba$bias, 2), ' (',ba$conf.int*100,'%CI ±', round(ba$bias.ci, 2),')\n',
               'Lim. agrmt (±',round(qnorm(1-((1-conf.int)/2)), 2),'SD): ', round(ba$limit.agrmt.lower, 2), ';', round(ba$limit.agrmt.upper, 2), ' (',ba$conf.int*100,'%CI ±', round(ba$limit.agrmt.ci,2),')\n',
-              'Percentage of error: ', round(ba$percentage.error, 1), '%',
+              'Percentage of error: ', round(ba$percentage.error*100, 1), '%',
               sep=''),
         side=3, line=0.5, cex = 0.7, outer=F)
 }

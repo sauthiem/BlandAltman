@@ -88,8 +88,8 @@ BA.analysis <- function(a, b, ...){
 
 
   # coefficient de variation: CV = sd/mean
-  CVa = sd(x) / mean(x)
-  CVb = sd(y) / mean(y)
+  CVa = sd(a) / mean(a)
+  CVb = sd(b) / mean(b)
   percentage.error <- sqrt(CVa^2+CVb^2)
 
   if (percent == T){
