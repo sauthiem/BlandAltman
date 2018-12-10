@@ -88,9 +88,13 @@ BA.analysis <- function(a, b, ...){
 
 
   # coefficient de variation: CV = sd/mean
+  # McLean (1997) Anaesthesia and Intensive Care, 25(3), pp.250–254.
+
   CVa = sd(a) / mean(a)
   CVb = sd(b) / mean(b)
-  percentage.error <- sqrt(CVa^2+CVb^2)
+
+  percentage.error <- sqrt((2*CVa)^2 + (2*CVb)^2)
+
 
   if (percent == T){
     fact <- 100
