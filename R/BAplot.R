@@ -151,5 +151,3 @@ BA.plot <- function(a, b, ...){
               sep=''),
         side=3, line=0.5, cex = 0.7, outer=F)
 }
-
-
