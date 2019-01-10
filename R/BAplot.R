@@ -12,6 +12,8 @@
 #' @param percent bool for relative estimation (default F)
 #' @param conf.int Confidence interval (default 0.95)
 #' @param reference c("A", "B", "mean") method to be used on X axis (default "mean")
+#' @param save path to save plot (PDF). If set to TRUE, title is used.
+#' @param size c(width,height) in inch, default c(11,8.5)
 #' @return Standard R plot
 #' @examples
 #' BA.analysis(c(1,2,3,4), c(2,3,4,5), title="My great title")
@@ -29,6 +31,22 @@ BA.plot <- function(a, b, ...){
   } else {
     title <-' '
   }
+
+  if (any(names(k) == 'save')){
+    save <- k$save
+    if (save == T){
+      save <- paste(title, '.pdf', sep="")
+    }
+  } else {
+    save <- FALSE
+  }
+
+  if (any(names(k) == 'size')){
+    size <- k$size
+  } else {
+    size <- c(11,8.5)
+  }
+
 
   if (any(names(k) == 'percent')){
     percent <- k$percent
@@ -84,6 +102,9 @@ BA.plot <- function(a, b, ...){
     #ylim <- c(ylim[1] - abs(ylim[1]*0.2) , ylim[2] + abs(ylim[2]*0.2))
   }
 
+  if (save != F){
+    cairo_pdf(filename=save, width = size[1], height = size[2])
+  }
 
   par(mar = c(5,5,5,2.5))
   par(xpd=FALSE) # Draw inside the plot (grid)
@@ -150,4 +171,9 @@ BA.plot <- function(a, b, ...){
               'Percentage of error: ', round(ba$percentage.error*100, 1), '%',
               sep=''),
         side=3, line=0.5, cex = 0.7, outer=F)
+
+  if (save != F){
+    dev.off()
+  }
+
 }

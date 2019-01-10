@@ -1,6 +1,6 @@
 Package: BlandAltman
 Title: Bland-Altman analysis and plot
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("Michael", "Sauthier", email = "michael.sauthier@gmail.com", role = c("aut", "cre")),
     person("David", "Brossier", email = "david_brossier@yahoo.fr", role = c("ctb")) )

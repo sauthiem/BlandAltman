@@ -68,7 +68,9 @@ List of 16
 - title: Title of the plot
 - percent: relative estimation of the differences (default F)
 - reference: X axis (method A, B or mean) (default "mean")
-- conf.int: confidence interval of both limits of agreements and all uncertainties (default 0.95 (~ ±1.96)
+- conf.int: confidence interval of both limits of agreements and all uncertainties (default 0.95 (±1.96))
+- save: path to save plot (PDF). If set to TRUE, the title is used.
+- size: c(width,height) in inch, default c(11,8.5)
 
 ## List returned elements:
 

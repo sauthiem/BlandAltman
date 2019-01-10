@@ -18,6 +18,10 @@ BA.plot(a, b, ...)
 \item{conf.int}{Confidence interval (default 0.95)}
 
 \item{reference}{c("A", "B", "mean") method to be used on X axis (default "mean")}
+
+\item{save}{path to save plot (PDF). If set to TRUE, title is used.}
+
+\item{size}{c(width,height) in inch, default c(11,8.5)}
 }
 \value{
 Standard R plot
