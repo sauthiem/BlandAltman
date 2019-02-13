@@ -38,7 +38,7 @@ agreement <- function(a, b = NULL){
   names(specific.agree) <- liste_classes
   names(totals) <- liste_classes
 
-  conf.matrix.normalized <- cm/max(cm)
+  conf.matrix.normalized <- cm/sum(cm)
 
   return(list("conf.matrix"=cm,
               "conf.matrix.normalized"=conf.matrix.normalized,
