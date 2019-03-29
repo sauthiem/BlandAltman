@@ -108,22 +108,24 @@ BA.plot <- function(a, b, ...){
 
   par(mar = c(5,5,5,2.5))
   par(xpd=FALSE) # Draw inside the plot (grid)
+
+
   plot(x, ba$y,
        pch=19,  cex=0.6,
-#       col=rgb(red = 0.275, green = 0.51, blue = 0.706, alpha = 0.7),# 'steelblue',
-      col=rgb(red = 0.3, green = 0.3, blue = 0.3, alpha = 0.7),# 'gray',
-      bg=rgb(red = 0.3, green = 0.3, blue = 0.3, alpha = 0.7),# 'gray',
+       #   col=rgb(red = 0.275, green = 0.51, blue = 0.706, alpha = 0.7),# 'steelblue',
+       col=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = 0.6),# 'gray',
+       bg=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = 0.6),# 'gray',
 
        xlim = xlim,
        ylim = ylim,
        # yaxt = 'n', # Suppress y axes
        xaxs = "i", # Remove internal margins
        ylab = ylab,
-       xlab = xlab
+       xlab = xlab,
   )
 
-
   grid(NULL, NULL, lwd = 0.5, lty=1)
+
   par(xpd=TRUE) # Draw outside the plot (legend)
 
   # Upper CI limits of agreement
