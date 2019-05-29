@@ -52,11 +52,16 @@ BA.analysis <- function(a, b, ...){
 
   x <- (a + b)/2
 
+  # Remove NA's based on x
+  x = x[is.finite(x)]
+  y = y[is.finite(x)]
+
   # Normality validation
   if (sd(y) == 0) {
     warning("Normality of the differences cannot be evaluated, beacuse all differences are the same")
   } else if (shapiro.test(y)$p.value < 0.05) {
-    warning(paste("The differences are not normally distributed (Shapiro-Wilk test p-value = ",signif(shapiro.test(y)$p.value, 3),"), therefore the Bland-Altman analysis is not recommended.\n",
+    warning(paste("The differences may not be normally distributed (Shapiro-Wilk test p-value = ",signif(shapiro.test(y)$p.value, 3),"),\n
+                  therefore the Bland-Altman analysis may not be appropriate.\n",
                   "Please see hist(BA.analysis(a,b)$y) or qqnorm(BA.analysis(a,b)$y, plot.it = T)\n",
                   "A log transformation can be tried.",
                   sep=""))
