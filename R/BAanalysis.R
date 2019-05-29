@@ -53,8 +53,8 @@ BA.analysis <- function(a, b, ...){
   x <- (a + b)/2
 
   # Remove NA's based on x
-  x = x[is.finite(x)]
-  y = y[is.finite(x)]
+  x = x[is.finite(x) & is.finite(y)]
+  y = y[is.finite(x) & is.finite(y)]
 
   # Normality validation
   if (sd(y) == 0) {
