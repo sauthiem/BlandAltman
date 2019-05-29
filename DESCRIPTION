@@ -1,6 +1,6 @@
 Package: BlandAltman
 Title: Bland-Altman analysis and plot
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: c(
     person("Michael", "Sauthier", email = "michael.sauthier@gmail.com", role = c("aut", "cre")),
     person("David", "Brossier", email = "david_brossier@yahoo.fr", role = c("ctb")) )
@@ -10,6 +10,7 @@ Description:
     - Relative or absolute difference
     - Validation of the normality of the differences (Shapiro-Wilk)
     - Percentage of error
+    - Overall and specific agreement
     - No dependencies
 		- Overall and specific agreement
 Depends: R (>= 3.3.0)

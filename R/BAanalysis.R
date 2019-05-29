@@ -110,7 +110,9 @@ BA.analysis <- function(a, b, ...){
     fact <- 1
   }
 
-  return(list('x'= x,
+  return(list('a'=a,
+              'b'=b,
+              'x'= x,
               'y'= y*fact,
               'bias'=bias*fact,
               'bias.ci'=bias.ci*fact,

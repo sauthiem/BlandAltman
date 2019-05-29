@@ -66,6 +66,10 @@ BA.plot <- function(a, b, ...){
     reference <- "mean"
   }
 
+  #Take into account NAs filtration
+  a = ba$a
+  b = ba$b
+
   # X axis: default mean(A,B)
   if (tolower(reference) == 'mean') {
     x <- (a + b)/2
