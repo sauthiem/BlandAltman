@@ -39,6 +39,10 @@ BA.plot(a, b, title="Simulated vs observed data", percent=T, reference="mean", c
 ba <- BA.analysis(a, b, percent=F)
 str(ba)
 
+# Agreement
+agreement(a, b)
+
+
 ```
 
 ![BA Example](BA.svg)
