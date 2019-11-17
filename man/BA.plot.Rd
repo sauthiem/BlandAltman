@@ -17,6 +17,8 @@ BA.plot(a, b, ...)
 
 \item{conf.int}{Confidence interval (default 0.95)}
 
+\item{hide.conf.int}{Hide confidence interval (default F)}
+
 \item{reference}{c("A", "B", "mean") method to be used on X axis (default "mean")}
 
 \item{save}{path to save plot (PDF). If set to TRUE, title is used.}

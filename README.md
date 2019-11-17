@@ -70,9 +70,10 @@ List of 16
 ## Parameters
 
 - title: Title of the plot
-- percent: relative estimation of the differences (default F)
+- percent: relative estimation of the differences (default FALSE)
 - reference: X axis (method A, B or mean) (default "mean")
 - conf.int: confidence interval of both limits of agreements and all uncertainties (default 0.95 (±1.96))
+- hide.conf.int: Hide confidence interval (default FALSE)
 - save: path to save plot (PDF). If set to TRUE, the title is used.
 - size: c(width,height) in inch, default c(11,8.5)
 

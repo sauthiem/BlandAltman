@@ -11,6 +11,7 @@
 #' @param title The title of the plot
 #' @param percent bool for relative estimation (default F)
 #' @param conf.int Confidence interval (default 0.95)
+#' @param hide.conf.int Hide confidence interval (default F)
 #' @param reference c("A", "B", "mean") method to be used on X axis (default "mean")
 #' @param save path to save plot (PDF). If set to TRUE, title is used.
 #' @param size c(width,height) in inch, default c(11,8.5)
@@ -58,6 +59,12 @@ BA.plot <- function(a, b, ...){
     conf.int <- k$conf.int
   } else {
     conf.int <- 0.95
+  }
+
+  if (any(names(k) == 'hide.conf.int')){
+    conf.int <- k$conf.int
+  } else {
+    conf.int <- FALSE
   }
 
   if (any(names(k) == 'reference')){
@@ -133,7 +140,8 @@ BA.plot <- function(a, b, ...){
   par(xpd=TRUE) # Draw outside the plot (legend)
 
   # Upper CI limits of agreement
-  polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
+ if (hide.conf.int == F){
+   polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
           c(ba$limit.agrmt.upper.ci.upper, ba$limit.agrmt.upper.ci.lower, ba$limit.agrmt.upper.ci.lower , ba$limit.agrmt.upper.ci.upper),
           col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
           border = NA)
@@ -149,7 +157,7 @@ BA.plot <- function(a, b, ...){
           c(ba$limit.agrmt.lower.ci.upper, ba$limit.agrmt.lower.ci.lower, ba$limit.agrmt.lower.ci.lower , ba$limit.agrmt.lower.ci.upper),
           col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
           border = NA)
-
+}
   # Zero, bias and limits of agreements
   segments(xlim[1], 0, xlim[2], 0, col='gray10', lty=5, lwd=1)
 
