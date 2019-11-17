@@ -114,7 +114,7 @@ BA.plot <- function(a, b, ...){
   }
 
   if (save != F){
-    cairo_pdf(filename=save, width = size[1], height = size[2])
+    pdf(filename=save, width = size[1], height = size[2])
   }
 
   par(mar = c(5,5,5,2.5))
@@ -157,7 +157,17 @@ BA.plot <- function(a, b, ...){
           c(ba$limit.agrmt.lower.ci.upper, ba$limit.agrmt.lower.ci.lower, ba$limit.agrmt.lower.ci.lower , ba$limit.agrmt.lower.ci.upper),
           col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
           border = NA)
-}
+
+  text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
+  text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
+
+  text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
+  text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
+
+  text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
+  text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
+  }
+
   # Zero, bias and limits of agreements
   segments(xlim[1], 0, xlim[2], 0, col='gray10', lty=5, lwd=1)
 
@@ -168,17 +178,9 @@ BA.plot <- function(a, b, ...){
   # Legends
   decalage <- ba$limit.agrmt.ci * 0.1
 
-  text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
   text(xlim[2],ba$limit.agrmt.upper, round(ba$limit.agrmt.upper, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
-
-  text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
   text(xlim[2],ba$bias, round(ba$bias, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
-
-  text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
   text(xlim[2],ba$limit.agrmt.lower, round(ba$limit.agrmt.lower, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
 
 
   title(title, line=3)
