@@ -139,33 +139,36 @@ BA.plot <- function(a, b, ...){
 
   par(xpd=TRUE) # Draw outside the plot (legend)
 
+  # Legends
+  decalage <- ba$limit.agrmt.ci * 0.1
+
   # Upper CI limits of agreement
- if (hide.conf.int != T){
-   polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
-          c(ba$limit.agrmt.upper.ci.upper, ba$limit.agrmt.upper.ci.lower, ba$limit.agrmt.upper.ci.lower , ba$limit.agrmt.upper.ci.upper),
-          col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
-          border = NA)
+  if (hide.conf.int != T){
+    polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
+            c(ba$limit.agrmt.upper.ci.upper, ba$limit.agrmt.upper.ci.lower, ba$limit.agrmt.upper.ci.lower , ba$limit.agrmt.upper.ci.upper),
+            col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
+            border = NA)
 
-  # Bias
-  polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
-          c(ba$bias.ci.upper, ba$bias.ci.lower, ba$bias.ci.lower , ba$bias.ci.upper),
-          col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.25),
-          border = NA)
+    # Bias
+    polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
+            c(ba$bias.ci.upper, ba$bias.ci.lower, ba$bias.ci.lower , ba$bias.ci.upper),
+            col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.25),
+            border = NA)
 
-  # Lower CI limits of agreement
-  polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
-          c(ba$limit.agrmt.lower.ci.upper, ba$limit.agrmt.lower.ci.lower, ba$limit.agrmt.lower.ci.lower , ba$limit.agrmt.lower.ci.upper),
-          col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
-          border = NA)
+    # Lower CI limits of agreement
+    polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
+            c(ba$limit.agrmt.lower.ci.upper, ba$limit.agrmt.lower.ci.lower, ba$limit.agrmt.lower.ci.lower , ba$limit.agrmt.lower.ci.upper),
+            col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
+            border = NA)
 
-  text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
 
-  text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
 
-  text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
-  text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
+    text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
   }
 
   # Zero, bias and limits of agreements
@@ -175,8 +178,6 @@ BA.plot <- function(a, b, ...){
   segments(xlim[1], ba$bias, xlim[2], ba$bias, col='gray30', lty=1, lwd=1.5)
   segments(xlim[1], ba$limit.agrmt.upper, xlim[2], ba$limit.agrmt.upper, col='gray30', lty=3, lwd=1)
 
-  # Legends
-  decalage <- ba$limit.agrmt.ci * 0.1
 
   text(xlim[2],ba$limit.agrmt.upper, round(ba$limit.agrmt.upper, 2), pos=4, cex=0.5)
   text(xlim[2],ba$bias, round(ba$bias, 2), pos=4, cex=0.5)
