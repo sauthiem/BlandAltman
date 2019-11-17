@@ -17,7 +17,7 @@
 #' @param size c(width,height) in inch, default c(11,8.5)
 #' @return Standard R plot
 #' @examples
-#' BA.analysis(c(1,2,3,4), c(2,3,4,5), title="My great title")
+#' BA.plot(c(1,2,3,4), c(2,3,4,5), title="My great title")
 #' @export
 
 
@@ -140,7 +140,7 @@ BA.plot <- function(a, b, ...){
   par(xpd=TRUE) # Draw outside the plot (legend)
 
   # Upper CI limits of agreement
- if (hide.conf.int == F){
+ if (hide.conf.int != T){
    polygon(c(xlim[1], xlim[1], xlim[2], xlim[2]),
           c(ba$limit.agrmt.upper.ci.upper, ba$limit.agrmt.upper.ci.lower, ba$limit.agrmt.upper.ci.lower , ba$limit.agrmt.upper.ci.upper),
           col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
