@@ -114,7 +114,7 @@ BA.plot <- function(a, b, ...){
   }
 
   if (save != F){
-    pdf(filename=save, width = size[1], height = size[2])
+    cairo_pdf(filename=save, width = size[1], height = size[2])
   }
 
   par(mar = c(5,5,5,2.5))
