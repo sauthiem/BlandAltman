@@ -62,7 +62,7 @@ BA.plot <- function(a, b, ...){
   }
 
   if (any(names(k) == 'hide.conf.int')){
-    hide.conf.int <- k$conf.int
+    hide.conf.int <- k$hide.conf.int
   } else {
     hide.conf.int <- FALSE
   }
