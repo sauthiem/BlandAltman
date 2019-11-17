@@ -63,12 +63,13 @@ BA.analysis <- function(a, b, ...){
   # Normality validation
   if (sd(y) == 0) {
     warning("Normality of the differences cannot be evaluated, beacuse all differences are the same")
-  } else if (length(y)<5000 & shapiro.test(y)$p.value < 0.05) {
+  } else if (length(y)<5000){
+    if(shapiro.test(y)$p.value < 0.05) {
     warning(paste("The differences may not be normally distributed (Shapiro-Wilk test p-value = ",signif(shapiro.test(y)$p.value, 3),"),\ntherefore the Bland-Altman analysis may not be appropriate.\n",
                   "Please see hist(BA.analysis(a,b)$y) or qqnorm(BA.analysis(a,b)$y, plot.it = T)\n",
                   "A log transformation can be tried.",
                   sep=""))
-  }
+  }}
 
   # Statistiques
   n <- length(x)
