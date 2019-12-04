@@ -15,26 +15,37 @@ BA.plot(a, b, ...)
 
 \item{percent}{bool for relative estimation (default F)}
 
+\item{xlim}{c(x,y) limits on x axis}
+
+\item{ylim}{c(x,y) limits on y axis}
+
+\item{xlab}{x-axis title}
+
+\item{ylab}{y-axis title}
+
+\item{alpha}{point alpha (delfault 0.6)}
+
+\item{pch}{point type (default 19)}
+
 \item{conf.int}{Confidence interval (default 0.95)}
 
-\item{hide.conf.int}{Hide confidence interval (default F)}
+\item{hide.conf.int}{Hide confidence intervals (default FALSE)}
 
 \item{reference}{c("A", "B", "mean") method to be used on X axis (default "mean")}
 
-\item{save}{path to save plot (PDF). If set to TRUE, title is used.}
+\item{save}{path to save plot (PDF). If only set to TRUE, title is used.}
 
 \item{size}{c(width,height) in inch, default c(11,8.5)}
 }
 \value{
-Standard R plot
+Base R plot
 }
 \description{
 This function returns a Bland-Altman (BA) plot with 95% confidence
-interval (by default) on the bias and on the limits of agreements. It also
-calculates the percentage of error. Data can be converted to
+interval. It also calculates the percentage of error. Data can be converted to
 relative estimation. Validation of differences normality with
 Shapiro-Wilk test.
 }
 \examples{
-BA.analysis(c(1,2,3,4), c(2,3,4,5), title="My great title")
+BA.plot(c(1,2,3,4), c(2,3,4,5), title="My great title")
 }

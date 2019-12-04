@@ -1,12 +1,12 @@
 Package: BlandAltman
 Title: Bland-Altman Analysis and Plot
-Version: 0.2.6
+Version: 0.2.7
 Date: 2018-11-01
 Author: Michael Sauthier <michael.sauthier@gmail.com>, David Brossier <david_brossier@yahoo.fr>
 Maintainer: Michael Sauthier <michael.sauthier@gmail.com>
 Description: 
     - Bias (mean of the differences) and 95% confidence interval
-    - Limits of agreement (± 1.96SD by default) with 95% confidence interval
+    - Limits of agreement (default ± 1.96SD) with 95% confidence interval
     - Relative or absolute difference
     - Validation of the differences normality (Shapiro-Wilk)
     - Percentage of error
@@ -17,5 +17,4 @@ License: GNU-3
 URL: http://github.com/sauthiem/BlandAltman
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
-
+RoxygenNote: 7.0.1

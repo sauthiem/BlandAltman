@@ -1,8 +1,7 @@
 #' Bland-Altman plot
 #'
 #' This function returns a Bland-Altman (BA) plot with 95% confidence
-#' interval (by default) on the bias and on the limits of agreements. It also
-#' calculates the percentage of error. Data can be converted to
+#' interval. It also calculates the percentage of error. Data can be converted to
 #' relative estimation. Validation of differences normality with
 #' Shapiro-Wilk test.
 #'
@@ -10,12 +9,18 @@
 #' @param y A numerical vector
 #' @param title The title of the plot
 #' @param percent bool for relative estimation (default F)
+#' @param xlim c(x,y) limits on x axis
+#' @param ylim c(x,y) limits on y axis
+#' @param xlab x-axis title
+#' @param ylab y-axis title
+#' @param alpha point alpha (delfault 0.6)
+#' @param pch point type (default 19)
 #' @param conf.int Confidence interval (default 0.95)
-#' @param hide.conf.int Hide confidence interval (default F)
+#' @param hide.conf.int Hide confidence intervals (default FALSE)
 #' @param reference c("A", "B", "mean") method to be used on X axis (default "mean")
-#' @param save path to save plot (PDF). If set to TRUE, title is used.
+#' @param save path to save plot (PDF). If only set to TRUE, title is used.
 #' @param size c(width,height) in inch, default c(11,8.5)
-#' @return Standard R plot
+#' @return Base R plot
 #' @examples
 #' BA.plot(c(1,2,3,4), c(2,3,4,5), title="My great title")
 #' @export
@@ -98,6 +103,31 @@ BA.plot <- function(a, b, ...){
 
   }
 
+  # Labs
+  if (any(names(k) == 'xlab')){
+    xlab <- k$xlab
+  }
+
+  if (any(names(k) == 'ylab')){
+    ylab <- k$ylab
+  }
+
+  # Points
+  if (any(names(k) == 'alpha')){
+    alpha <- k$alpha
+  } else {
+    alpha <- 0.6
+  }
+
+
+  # Points
+  if (any(names(k) == 'pch')){
+    pch <- k$pch
+  } else {
+    pch <- 19
+  }
+
+
   # Limits calculations
   if (any(names(k) == 'xlim')){
     xlim <- k$xlim
@@ -113,6 +143,7 @@ BA.plot <- function(a, b, ...){
     #ylim <- c(ylim[1] - abs(ylim[1]*0.2) , ylim[2] + abs(ylim[2]*0.2))
   }
 
+
   if (save != F){
     cairo_pdf(filename=save, width = size[1], height = size[2])
   }
@@ -122,10 +153,10 @@ BA.plot <- function(a, b, ...){
 
 
   plot(x, ba$y,
-       pch=19,  cex=0.6,
+       pch=pch,  cex=0.6,
        #   col=rgb(red = 0.275, green = 0.51, blue = 0.706, alpha = 0.7),# 'steelblue',
-       col=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = 0.6),# 'gray',
-       bg=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = 0.6),# 'gray',
+       col=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = alpha),# 'gray',
+       bg=rgb(red = 0.25, green = 0.25, blue = 0.25, alpha = alpha),# 'gray',
 
        xlim = xlim,
        ylim = ylim,
