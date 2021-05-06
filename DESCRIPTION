@@ -1,7 +1,7 @@
 Package: BlandAltman
 Title: Bland-Altman Analysis and Plot
-Version: 0.2.7
-Date: 2018-11-01
+Version: 0.2.8
+Date: 2021-05-06
 Author: Michael Sauthier <michael.sauthier@gmail.com>, David Brossier <david_brossier@yahoo.fr>
 Maintainer: Michael Sauthier <michael.sauthier@gmail.com>
 Description: 
@@ -17,4 +17,4 @@ License: GNU-3
 URL: http://github.com/sauthiem/BlandAltman
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.1
+RoxygenNote: 7.1.1

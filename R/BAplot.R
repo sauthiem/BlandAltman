@@ -17,6 +17,7 @@
 #' @param pch point type (default 19)
 #' @param conf.int Confidence interval (default 0.95)
 #' @param hide.conf.int Hide confidence intervals (default FALSE)
+#' @param hide.ci.text.plot Hide just the confidence interval values on the plot
 #' @param reference c("A", "B", "mean") method to be used on X axis (default "mean")
 #' @param save path to save plot (PDF). If only set to TRUE, title is used.
 #' @param size c(width,height) in inch, default c(11,8.5)
@@ -70,6 +71,12 @@ BA.plot <- function(a, b, ...){
     hide.conf.int <- k$hide.conf.int
   } else {
     hide.conf.int <- FALSE
+  }
+
+  if (any(names(k) == 'hide.ci.text.plot')){
+    hide.ci.text.plot <- k$hide.ci.text.plot
+  } else {
+    hide.ci.text.plot <- F
   }
 
   if (any(names(k) == 'reference')){
@@ -192,14 +199,16 @@ BA.plot <- function(a, b, ...){
             col = rgb(red = 0.1, green = 0.1, blue = 0.1, alpha = 0.15),
             border = NA)
 
-    text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
-    text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
+    if(hide.ci.text.plot==F){
+      text(xlim[2],ba$limit.agrmt.upper.ci.upper+decalage, round(ba$limit.agrmt.upper.ci.upper, 2), pos=4, cex=0.5)
+      text(xlim[2],ba$limit.agrmt.upper.ci.lower-decalage, round(ba$limit.agrmt.upper.ci.lower, 2), pos=4, cex=0.5)
 
-    text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
-    text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
+      text(xlim[2],ba$bias.ci.upper+decalage, round(ba$bias.ci.upper, 2), pos=4, cex=0.5)
+      text(xlim[2],ba$bias.ci.lower-decalage, round(ba$bias.ci.lower, 2), pos=4, cex=0.5)
 
-    text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
-    text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
+      text(xlim[2],ba$limit.agrmt.lower.ci.upper+decalage, round(ba$limit.agrmt.lower.ci.upper, 2), pos=4, cex=0.5)
+      text(xlim[2],ba$limit.agrmt.lower.ci.lower-decalage, round(ba$limit.agrmt.lower.ci.lower, 2), pos=4, cex=0.5)
+    }
   }
 
   # Zero, bias and limits of agreements

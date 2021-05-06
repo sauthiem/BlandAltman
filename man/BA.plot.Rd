@@ -31,6 +31,8 @@ BA.plot(a, b, ...)
 
 \item{hide.conf.int}{Hide confidence intervals (default FALSE)}
 
+\item{hide.ci.text.plot}{Hide just the confidence interval values on the plot}
+
 \item{reference}{c("A", "B", "mean") method to be used on X axis (default "mean")}
 
 \item{save}{path to save plot (PDF). If only set to TRUE, title is used.}
